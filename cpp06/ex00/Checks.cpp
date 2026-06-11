@@ -1,6 +1,6 @@
 #include "ScalarConverter.hpp"
 
-bool isLiteral(const std::string& s)
+bool ScalarConverter::isLiteral(const std::string& s)
 {
 	return (s == "nan" || s == "nanf" ||
 			s == "+inf" || s == "-inf" ||
@@ -8,12 +8,12 @@ bool isLiteral(const std::string& s)
 			s == "inf" || s == "inff");
 }
 
-bool isChar(const std::string& s)
+bool ScalarConverter::isChar(const std::string& s)
 {
 	return (s.length() == 1 && !isdigit(s[0]));
 }
 
-bool isInt(const std::string& s)
+bool ScalarConverter::isInt(const std::string& s)
 {
 	size_t i = 0;
 	if (s[0] == '-' || s[0] == '+')
@@ -27,7 +27,7 @@ bool isInt(const std::string& s)
 	return true;
 }
 
-bool isFloat(const std::string& s)
+bool ScalarConverter::isFloat(const std::string& s)
 {
 	if (s.empty() || s[s.length() - 1] != 'f')
 		return false;
@@ -47,7 +47,7 @@ bool isFloat(const std::string& s)
 	return hasDot;
 }
 
-bool isDouble(const std::string& s)
+bool ScalarConverter::isDouble(const std::string& s)
 {
 	bool hasDot = false;
 	size_t i = 0;

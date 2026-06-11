@@ -18,13 +18,9 @@ private:
 	~Serializer();
 
 public:
-	static uintptr_t serialize(Data* ptr) {
-		return reinterpret_cast<uintptr_t>(ptr);
-	}
+	static uintptr_t serialize(Data* ptr);
 
-	static Data* deserialize(uintptr_t raw) {
-		return reinterpret_cast<Data*>(raw);
-	}
+	static Data* deserialize(uintptr_t raw);
 };
 
 #endif

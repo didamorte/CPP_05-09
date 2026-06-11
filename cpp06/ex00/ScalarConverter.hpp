@@ -16,20 +16,20 @@ private:
 	ScalarConverter& operator=(const ScalarConverter& other);
 	~ScalarConverter();
 
+	static void printChar(double value);
+	static void printInt(double value, const std::string& s);
+	static void printFloat(double value);
+	static void printDouble(double value);
+	static void printLiteral(const std::string& s);
+
+	static bool isLiteral(const std::string& s);
+	static bool isChar(const std::string& s);
+	static bool isInt(const std::string& s);
+	static bool isFloat(const std::string& s);
+	static bool isDouble(const std::string& s);
+
 public:
 	static void convert(std::string s);
 };
-
-void printChar(double value);
-void printInt(double value, const std::string& s);
-void printFloat(double value);
-void printDouble(double value);
-void printLiteral(const std::string& s);
-
-bool isLiteral(const std::string& s);
-bool isChar(const std::string& s);
-bool isInt(const std::string& s);
-bool isFloat(const std::string& s);
-bool isDouble(const std::string& s);
 
 #endif

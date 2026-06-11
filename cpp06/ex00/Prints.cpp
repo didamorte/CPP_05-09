@@ -1,6 +1,6 @@
 #include "ScalarConverter.hpp"
 
-void printLiteral(const std::string& s)
+void ScalarConverter::printLiteral(const std::string& s)
 {
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
@@ -16,7 +16,7 @@ void printLiteral(const std::string& s)
 	}
 }
 
-void printChar(double value)
+void ScalarConverter::printChar(double value)
 {
 	std::cout << "char: ";
 	if (value < 0 || value > 127 || std::isnan(value) || std::isinf(value))
@@ -27,7 +27,7 @@ void printChar(double value)
 		std::cout << "'" << static_cast<char>(value) << "'" << std::endl;
 }
 
-void printInt(double value, const std::string& s)
+void ScalarConverter::printInt(double value, const std::string& s)
 {
 	(void)s;
 	std::cout << "int: ";
@@ -39,7 +39,7 @@ void printInt(double value, const std::string& s)
 		std::cout << static_cast<int>(value) << std::endl;
 }
 
-void printFloat(double value)
+void ScalarConverter::printFloat(double value)
 {
 	std::cout << "float: ";
 	float f = static_cast<float>(value);
@@ -49,7 +49,7 @@ void printFloat(double value)
 		std::cout << f << "f" << std::endl;
 }
 
-void printDouble(double value)
+void ScalarConverter::printDouble(double value)
 {
 	std::cout << "double: ";
 	if (value == static_cast<int>(value))
